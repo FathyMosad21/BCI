@@ -193,3 +193,125 @@ body {
         padding: 30px;
     }
 }
+/* Add these animations to your about.css file */
+
+/* Fade In Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Slide In Animation */
+@keyframes slideIn {
+    from {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Pulse Animation */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Apply animations to elements */
+
+.section-title {
+    animation: slideIn 1s ease-out;
+}
+
+.hero-image {
+    animation: fadeIn 1.5s ease-out;
+}
+
+.content-card {
+    opacity: 0;
+    animation: fadeIn 0.8s ease-out forwards;
+}
+
+/* Delay each content card */
+.vision {
+    animation-delay: 0.2s;
+}
+
+.mission {
+    animation-delay: 0.4s;
+}
+
+.team {
+    animation-delay: 0.6s;
+}
+
+/* Animate mission points */
+.point {
+    opacity: 0;
+    animation: slideIn 0.5s ease-out forwards;
+}
+
+.point:nth-child(1) { animation-delay: 0.6s; }
+.point:nth-child(2) { animation-delay: 0.8s; }
+.point:nth-child(3) { animation-delay: 1s; }
+.point:nth-child(4) { animation-delay: 1.2s; }
+
+/* Enhance existing hover effects */
+.nav-link:hover {
+    transform: translateY(-2px);
+    transition: transform 0.3s ease;
+}
+
+.btn-logout:hover {
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}
+
+/* Add smooth scroll behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Add animation to point markers */
+.point-marker {
+    animation: pulse 2s infinite;
+}
+
+/* Add hover animation to hero image */
+.hero-image:hover {
+    transform: translateY(-10px) scale(1.02);
+    transition: transform 0.5s ease;
+    box-shadow: 0 25px 50px rgba(0, 255, 136, 0.2);
+}
+
+/* Enhance content card hover effect */
+.content-card:hover {
+    transform: translateY(-5px) scale(1.01);
+    box-shadow: 0 15px 30px rgba(0, 255, 136, 0.1);
+    transition: all 0.4s ease;
+}
+
+/* Add loading animation for images */
+img {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+img.loaded {
+    opacity: 1;
+}

@@ -116,6 +116,9 @@ body {
     position: relative;
     overflow: hidden;
 }
+.hero-title .highlight {
+    color: var(--primary); /* Using the bright green color */
+}
 
 .hero-content {
     text-align: center;

@@ -1,0 +1,475 @@
+:root {
+    --primary: #00FF88;
+    --secondary: #0A1F3A;
+    --accent: #FF6B35;
+    --dark: #0A0A0A;
+    --light: #FFFFFF;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--dark);
+    color: var(--light);
+}
+
+
+/* Navigation styles (same as home and about pages) */
+
+.navbar {
+    background: rgba(10, 31, 58, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 1rem 0;
+    transition: all 0.3s ease;
+}
+
+.brand-logo {
+    width: 50px;
+    height: 50px;
+    margin-right: 1rem;
+    border-radius: 8px;
+}
+
+.brand-text {
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    background: linear-gradient(45deg, var(--primary), #00E676);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.nav-link {
+    font-size: 1.1rem;
+    margin: 0 1.5rem;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.btn-logout {
+    background: transparent;
+    border: 2px solid var(--primary);
+    color: var(--primary);
+    padding: 0.5rem 1.5rem;
+    border-radius: 30px;
+    margin-left: 2rem;
+    transition: all 0.3s ease;
+}
+
+.btn-logout:hover {
+    background: var(--primary);
+    color: var(--secondary);
+}
+
+
+/* Brand styles remain the same */
+
+.brand-logo {
+    width: 50px;
+    height: 50px;
+    margin-right: 1rem;
+    border-radius: 8px;
+}
+
+.brand-text {
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    background: linear-gradient(45deg, var(--primary), #00E676);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+/* Help Hero Section */
+
+.help-hero {
+    padding: 140px 0 80px;
+    background: linear-gradient(135deg, rgba(10, 31, 58, 0.95), rgba(0, 0, 0, 0.95));
+}
+
+.section-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+}
+
+.text-gradient {
+    background: linear-gradient(45deg, var(--primary), var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-image {
+    width: 100%;
+    border-radius: 20px;
+    /* box-shadow: 0 20px 40px rgba(0, 255, 136, 0.15); */
+    filter: drop-shadow(30px 10px 4px rgba(0, 255, 136, 0.15));
+    transition: transform 0.3s ease;
+}
+
+
+/* FAQ Section */
+
+.faq-section {
+    padding: 80px 0;
+    background: var(--dark);
+}
+
+.faq-title {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.custom-accordion {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.accordion-item {
+    background: rgba(10, 31, 58, 0.5);
+    border: 1px solid rgba(0, 255, 136, 0.1);
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.accordion-button {
+    background: transparent;
+    color: var(--light);
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 1.5rem;
+}
+
+.accordion-button:not(.collapsed) {
+    background: rgba(0, 255, 136, 0.1);
+    color: var(--primary);
+}
+
+.accordion-button::after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%2300FF88'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+.accordion-body {
+    background: rgba(10, 31, 58, 0.3);
+    padding: 1.5rem;
+    color: var(--light);
+}
+
+
+/* Process Steps */
+
+.process-steps {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.step {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem;
+    background: rgba(0, 255, 136, 0.05);
+    border-radius: 10px;
+}
+
+.step-number {
+    background: var(--primary);
+    color: var(--dark);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+}
+
+
+/* Comparison Grid */
+
+.comparison-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.comparison-item {
+    padding: 1.5rem;
+    background: rgba(0, 255, 136, 0.05);
+    border-radius: 10px;
+}
+
+.comparison-item h4 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+
+/* Responsive Design */
+
+@media (max-width: 992px) {
+    .section-title {
+        font-size: 2.5rem;
+    }
+    .help-hero {
+        padding: 120px 0 60px;
+    }
+    .content-left {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .faq-title {
+        font-size: 2rem;
+    }
+    .accordion-button {
+        font-size: 1rem;
+        padding: 1rem;
+    }
+    .step {
+        flex-direction: column;
+    }
+}
+:root {
+    --primary: #00FF88;
+    --secondary: #0A1F3A;
+    --accent: #FF6B35;
+    --dark: #0A0A0A;
+    --light: #FFFFFF;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--dark);
+    color: var(--light);
+}
+
+/* Enhanced Navigation Animations */
+.navbar {
+    background: rgba(10, 31, 58, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 1rem 0;
+    transition: all 0.5s ease;
+    animation: slideDown 0.5s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.brand-logo {
+    width: 50px;
+    height: 50px;
+    margin-right: 1rem;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.brand-logo:hover {
+    transform: rotate(360deg);
+    transition: transform 0.8s ease;
+}
+
+.brand-text {
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    background: linear-gradient(45deg, var(--primary), #00E676);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientShift 3s ease infinite;
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Enhanced Hero Section Animations */
+.help-hero {
+    padding: 140px 0 80px;
+    background: linear-gradient(135deg, rgba(10, 31, 58, 0.95), rgba(0, 0, 0, 0.95));
+    position: relative;
+    overflow: hidden;
+}
+
+.section-title {
+    animation: slideInLeft 0.8s ease-out;
+}
+
+.hero-image {
+    animation: floatAnimation 3s ease-in-out infinite;
+    transition: transform 0.3s ease;
+}
+
+@keyframes floatAnimation {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Enhanced FAQ Section Animations */
+.faq-section {
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards;
+    animation-delay: 0.5s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.accordion-item {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.accordion-item:hover {
+    transform: translateX(10px);
+    box-shadow: -5px 5px 15px rgba(0, 255, 136, 0.1);
+}
+
+/* Enhanced Process Steps Animations */
+.step {
+    opacity: 0;
+    transform: translateX(-20px);
+    animation: slideInSteps 0.5s ease-out forwards;
+}
+
+.step:nth-child(1) { animation-delay: 0.1s; }
+.step:nth-child(2) { animation-delay: 0.2s; }
+.step:nth-child(3) { animation-delay: 0.3s; }
+.step:nth-child(4) { animation-delay: 0.4s; }
+.step:nth-child(5) { animation-delay: 0.5s; }
+
+@keyframes slideInSteps {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.step-number {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Enhanced Button Animations */
+.btn-logout {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.btn-logout:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 255, 136, 0.2);
+}
+
+.btn-logout::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    transition: width 0.6s ease, height 0.6s ease;
+    transform: translate(-50%, -50%);
+}   
+
+.btn-logout:hover::after {
+    width: 300%;
+    height: 300%;
+}
+
+/* Responsive Animation Adjustments */
+@media (max-width: 768px) {
+    .step {
+        animation: fadeIn 0.5s ease-out forwards;
+    }
+    
+    .accordion-item:hover {
+        transform: none;
+    }
+}

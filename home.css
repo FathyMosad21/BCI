@@ -1,0 +1,227 @@
+/* General styling
+
+* {
+    font-family: Arial, Helvetica, sans-serif, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.home {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('Images/2.jpeg');
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.home h1 {
+    font-size: 5rem;
+} */
+
+ :root {
+    --primary: #00FF88;
+    --secondary: #0A1F3A;
+    --accent: #FF6B35;
+    --dark: #0A0A0A;
+    --light: #FFFFFF;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--dark);
+    color: var(--light);
+}
+
+
+/* Navigation */
+
+.navbar {
+    background: rgba(10, 31, 58, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 1rem 0;
+    transition: all 0.3s ease;
+}
+
+.brand-logo {
+    width: 50px;
+    height: 50px;
+    margin-right: 1rem;
+    border-radius: 8px;
+}
+
+.brand-text {
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    background: linear-gradient(45deg, var(--primary), #00E676);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.nav-link {
+    font-size: 1.1rem;
+    margin: 0 1.5rem;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.btn-logout {
+    background: transparent;
+    border: 2px solid var(--primary);
+    color: var(--primary);
+    padding: 0.5rem 1.5rem;
+    border-radius: 30px;
+    margin-left: 2rem;
+    transition: all 0.3s ease;
+}
+
+.btn-logout:hover {
+    background: var(--primary);
+    color: var(--secondary);
+}
+
+
+/* Hero Section */
+
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(10, 31, 58, 0.9), rgba(0, 0, 0, 0.9)), url('Images/2.jpeg') center/cover fixed;
+    position: relative;
+    overflow: hidden;
+}
+
+
+.hero-title .highlight {
+    color: var(--primary); /* Using the bright green color */
+}
+
+
+.hero-content {
+    text-align: center;
+    max-width: 1200px;
+    padding: 2rem;
+}
+
+.hero-title {
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    animation: fadeInUp 1s ease;
+}
+
+.text-gradient {
+    background: linear-gradient(45deg, var(--primary), var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.cta-group {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    margin-top: 3rem;
+}
+
+.cta-primary,
+.cta-secondary {
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.cta-primary {
+    background: var(--primary);
+    color: var(--secondary);
+    box-shadow: 0 10px 20px rgba(0, 255, 136, 0.3);
+}
+
+.cta-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(0, 255, 136, 0.5);
+}
+
+.cta-secondary {
+    border: 2px solid var(--primary);
+    color: var(--primary);
+}
+
+.cta-secondary:hover {
+    background: var(--primary);
+    color: var(--secondary);
+}
+
+
+/* Animations */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Responsive Design */
+
+@media (max-width: 992px) {
+    .hero-title {
+        font-size: 3rem;
+    }
+    .nav-link {
+        margin: 0.5rem 0;
+    }
+    .btn-logout {
+        margin-left: 0;
+        margin-top: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    .cta-group {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .cta-primary,
+    .cta-secondary {
+        width: 100%;
+    }
+}

@@ -1,346 +1,169 @@
-:root {
-    --primary: #00FF88;
-    --secondary: #0A1F3A;
-    --accent: #FF6B35;
-    --dark: #0A0A0A;
-    --light: #FFFFFF;
-}
+        :root {
+            --primary: #00FF88;
+            --secondary: #0A1F3A;
+            --accent: #FF6B35;
+            --dark: #0A0A0A;
+            --light: #FFFFFF;
+        }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
 
-body {
-    background-color: var(--dark);
-    color: var(--light);
-    height: 100vh;
-    margin: 0;
-    padding: 0px;
-    /* Adding a gradient background similar to home page */
-    background: linear-gradient(135deg, rgba(10, 31, 58, 0.9), rgba(0, 0, 0, 0.9));
-    background-attachment: fixed;
-}
+        body {
+            background: linear-gradient(135deg, rgba(10, 31, 58, 0.9), rgba(0, 0, 0, 0.9));
+            background-attachment: fixed;
+            color: var(--light);
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+        }
 
-/* Navigation */
-.navbar {
-    background: rgba(10, 31, 58, 0.95);
-    backdrop-filter: blur(10px);
-    padding: 1rem 0;
-    transition: all 0.3s ease;
-}
+        .navbar {
+            background: rgba(10, 31, 58, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0.5rem;
+            transition: all 0.3s ease;
+        }
 
-.brand-logo {
-    width: 50px;
-    height: 50px;
-    margin-right: 1rem;
-    border-radius: 8px;
-}
+        .brand-logo {
+            width: 50px;
+            height: 50px;
+            margin-right: 1rem;
+            border-radius: 8px;
+        }
 
-.brand-text {
-    font-size: 1.8rem;
-    font-weight: 700;
-    letter-spacing: 1px;
-    background: linear-gradient(45deg, var(--primary), #00E676);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
+        .brand-text {
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, var(--primary), #00E676);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
 
-.nav-link {
-    font-size: 1.1rem;
-    margin: 0 1.5rem;
-    position: relative;
-    transition: color 0.3s ease;
-}
+        .nav-link {
+            font-size: 1.1rem;
+            margin: 0 1.5rem;
+            position: relative;
+        }
 
-.nav-link::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: var(--primary);
-    transition: width 0.3s ease;
-}
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s ease;
+        }
 
-.nav-link:hover::after {
-    width: 100%;
-}
+        .nav-link:hover::after {
+            width: 100%;
+        }
 
-.btn-logout {
-    background: transparent;
-    border: 2px solid var(--primary);
-    color: var(--primary);
-    padding: 0.5rem 1.5rem;
-    border-radius: 30px;
-    margin-left: 2rem;
-    text-decoration: none;
-    transition: all 0.3s ease;
-}
+        .btn-logout {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            padding: 0.5rem 1.5rem;
+            border-radius: 30px;
+            text-decoration: none;
+        }
 
-.btn-logout:hover {
-    background: var(--primary);
-    color: var(--secondary);
-}
+        .btn-logout:hover {
+            background: var(--primary);
+            color: var(--secondary);
+        }
 
-/* Table styling */
-.card {
-    background: rgba(10, 31, 58, 0.8);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-    border: none;
-    border-radius: 15px;
-    overflow: hidden;
-    margin-top: 2rem;
-}
+        .card {
+            background: rgba(10, 31, 58, 0.8);
+            border-radius: 15px;
+            margin-top: 2rem;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
 
-.card-header {
-    background: var(--secondary);
-    color: var(--light);
-    border-bottom: 2px solid var(--primary);
-    padding: 1rem;
-}
+        .card-header {
+            background: var(--secondary);
+            color: var(--light);
+            border-bottom: 2px solid var(--primary);
+        }
 
-.card-body {
-    background-color: rgba(10, 31, 58, 0.6);
-    color: var(--light);
-}
+        .card-body {
+            background-color: rgba(10, 31, 58, 0.6);
+            color: var(--light);
+            overflow-x: auto;
+        }
 
-.card-header h3 {
-    margin: 0;
-    font-weight: 600;
-}
+        .table {
+            width: 100%;
+            table-layout: auto;
+            color: var(--light);
+            background-color: transparent;
+            margin-bottom: 0;
+        }
 
-.table {
-    color: var(--light);
-    background-color: transparent;
-}
+        .table-striped > tbody > tr:nth-of-type(odd) {
+            background-color: rgba(0, 0, 0, 0.2);
+        }
 
-/* Override Bootstrap's table-striped to use custom dark colors */
-.table-striped > tbody > tr:nth-of-type(odd) {
-    background-color: rgba(0, 0, 0, 0.2);
-}
+        .table-striped > tbody > tr:nth-of-type(even) {
+            background-color: rgba(10, 31, 58, 0.4);
+        }
 
-.table-striped > tbody > tr:nth-of-type(even) {
-    background-color: rgba(10, 31, 58, 0.4);
-}
+        .table thead th {
+            color: var(--primary);
+            background-color: rgba(0, 0, 0, 0.3);
+        }
 
-.table thead th {
-    border-color: rgba(255, 255, 255, 0.1);
-    color: var(--primary);
-    font-weight: 600;
-    background-color: rgba(0, 0, 0, 0.3);
-}
+        .delete-btn {
+            background-color: var(--accent);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
 
-.table tbody td {
-    border-color: rgba(255, 255, 255, 0.1);
-}
+        .delete-btn:hover {
+            background-color: #e25a2b;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 10px rgba(255, 107, 53, 0.3);
+        }
 
-.delete-btn {
-    background-color: var(--accent);
-    color: white;
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 30px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-weight: 600;
-}
+        #noHistoryMessage {
+            color: var(--light);
+            opacity: 0.7;
+        }
 
-.delete-btn:hover {
-    background-color: #e25a2b;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 10px rgba(255, 107, 53, 0.3);
-}
+        .container.mt-5.pt-5 {
+            flex: 1;
+            padding-top: 6rem !important;
+        }
 
-/* Make sure the no history message is also visible on dark background */
-#noHistoryMessage {
-    color: var(--light);
-    opacity: 0.7;
-}
-
-/* Responsive Design */
-@media (max-width: 992px) {
-    .nav-link {
-        margin: 0.5rem 0;
-    }
-    .btn-logout {
-        margin-left: 0;
-        margin-top: 1rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .container.mt-5.pt-5 {
-        padding-top: 6rem !important;
-    }
-}
-/* Add or update these styles in history.css */
-
-.delete-btn {
-    background-color: var(--accent);
-    color: white;
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 30px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-weight: 600;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.delete-btn:hover {
-    background-color: #e25a2b;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 10px rgba(255, 107, 53, 0.3);
-}
-
-.delete-btn:before {
-    content: "✕";
-    margin-right: 5px;
-    font-size: 0.8rem;
-}
-
-/* Add a subtle animation when deleting */
-@keyframes fadeOut {
-    from { opacity: 1; }
-    to { opacity: 0; }
-}
-
-.deleting {
-    animation: fadeOut 0.5s ease forwards;
-}
-/* أضف هذه الأنماط إلى ملف history.css */
-
-/* تحسين عرض الخلايا التي تحتوي على نص طويل */
-.table tbody td:first-child {
-    max-width: 0; /* هذا يفعّل خاصية text-overflow */
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
-
-/* عند تمرير المؤشر على الخلية، يظهر النص كاملاً */
-.table tbody td:first-child:hover {
-    white-space: normal;
-    overflow: visible;
-    cursor: pointer;
-    background-color: rgba(0, 255, 136, 0.1);
-    transition: all 0.3s ease;
-}
-
-/* خلية قابلة للتوسيع تظهر النص الكامل */
-.expanded-cell {
-    white-space: normal !important;
-    overflow: visible !important;
-    max-height: none !important;
-}
-
-/* زر الحذف */
-.delete-btn {
-    background-color: var(--accent);
-    color: white;
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 30px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-weight: 600;
-    display: inline-block;
-}
-
-.delete-btn:hover {
-    background-color: #e25a2b;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 10px rgba(255, 107, 53, 0.3);
-}
-
-/* تحسين ظهور الجدول بشكل عام */
-.table {
-    table-layout: fixed;
-}
-
-.card-body {
-    overflow-x: auto; /* للتمرير الأفقي إذا كان الجدول واسع جدًا */
-}
-/* Add these styles to history.css */
-
-/* تحسين عرض الخلايا التي تحتوي على نص طويل */
-.table tbody td:first-child {
-    max-width: 0;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    cursor: pointer;
-}
-
-/* عند تمرير المؤشر على الخلية، يظهر النص كاملاً */
-.table tbody td:first-child:hover {
-    background-color: rgba(0, 255, 136, 0.1);
-}
-
-/* خلية قابلة للتوسيع تظهر النص الكامل */
-.expanded-cell {
-    white-space: normal !important;
-    overflow: visible !important;
-    max-height: none !important;
-}
-
-/* زر الحذف */
-.delete-btn {
-    background-color: var(--accent);
-    color: white;
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 30px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-weight: 600;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.delete-btn:hover {
-    background-color: #e25a2b;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 10px rgba(255, 107, 53, 0.3);
-}
-
-.delete-btn span {
-    margin-right: 5px;
-    font-size: 1.2rem;
-    font-weight: bold;
-}
-
-/* تحسين ظهور الجدول بشكل عام */
-.table {
-    table-layout: fixed;
-    margin-bottom: 0;
-}
-
-.card-body {
-    overflow-x: auto;
-}
-
-/* إخفاء أي نص إضافي في نهاية الصفحة */
-body::after {
-    display: none;
-    content: "";
-}
-
-/* تأكد من أن الصفحة بأكملها محتواة في الهيكل */
-body {
-    overflow-x: hidden;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
-
-.container.mt-5.pt-5 {
-    flex: 1;
-}
+        @media (max-width: 576px) {
+            .table thead th,
+            .table tbody td {
+                font-size: 0.8rem;
+                padding: 0.4rem;
+            }
+            .btn-logout {
+                padding: 0.3rem 1rem;
+                font-size: 0.9rem;
+            }
+            .brand-text {
+                font-size: 1.4rem;
+            }
+            .navbar {
+                padding: 0.5rem;
+            }
+            .navbar-toggler {
+                padding: 0.25rem 0.5rem;
+            }
+        }
